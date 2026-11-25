@@ -1,0 +1,8 @@
+{
+  "name": "Parinay Banquet & Garden",
+  "description": "Royal wedding banquet hall and lush manicured garden lawn for grand celebrations, receptions, and bespoke hospitality with direct WhatsApp booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -3,7 +3,12 @@ import { ChevronLeft, ChevronRight, Expand, X } from 'lucide-react';
 import { GALLERY_ITEMS, type GalleryCategory } from '../data/venueData';
 import { VenueImage } from './VenueImage';
 
-const CATEGORIES: GalleryCategory[] = ['All', 'Banquet Hall', 'Garden Area'];
+const CATEGORIES: GalleryCategory[] = [
+  'All',
+  'Banquet Hall',
+  'Garden Area',
+  'Veranda & Entrance',
+];
 
 export function GallerySection() {
   const [activeCategory, setActiveCategory] = useState<GalleryCategory>('All');
@@ -97,8 +102,8 @@ export function GallerySection() {
           </div>
         </div>
 
-        {/* Clean 2-Column Editorial Photo Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Clean Responsive Photo Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredItems.map((item, idx) => (
             <figure
               key={item.id}

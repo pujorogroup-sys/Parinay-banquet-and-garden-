@@ -3,6 +3,8 @@ import {
   Check,
   Copy,
   ExternalLink,
+  Facebook,
+  Instagram,
   MapPin,
   MessageCircle,
   Phone,
@@ -234,8 +236,19 @@ export function ContactInquirySection() {
                     <dt className="text-xs font-medium text-[#8F6A1E] mb-1">
                       Address
                     </dt>
-                    <dd className="text-base font-medium text-[#1B1814] leading-relaxed">
-                      {VENUE_CONTACT.address}
+                    <dd className="space-y-1.5">
+                      <p className="text-base font-medium text-[#1B1814] leading-relaxed">
+                        {VENUE_CONTACT.address}
+                      </p>
+                      <a
+                        href={VENUE_CONTACT.googleMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-medium text-[#8F6A1E] hover:text-[#765514] underline underline-offset-2"
+                      >
+                        <span>Open in Google Maps</span>
+                        <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                      </a>
                     </dd>
                   </div>
                 </div>
@@ -257,7 +270,28 @@ export function ContactInquirySection() {
               </div>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-[#E7DFCE]">
+            <div className="mt-10 pt-6 border-t border-[#E7DFCE] space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href={VENUE_CONTACT.socials.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-[#1B1814] bg-[#FAF8F4] hover:bg-[#F3EAD3] border border-[#E7DFCE] rounded-md transition-colors duration-200 whitespace-nowrap"
+                >
+                  <Instagram className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href={VENUE_CONTACT.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-[#1B1814] bg-[#FAF8F4] hover:bg-[#F3EAD3] border border-[#E7DFCE] rounded-md transition-colors duration-200 whitespace-nowrap"
+                >
+                  <Facebook className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
+                  <span>Facebook</span>
+                </a>
+              </div>
+
               <a
                 href={quickChatUrl}
                 target="_blank"
@@ -533,6 +567,38 @@ export function ContactInquirySection() {
                 </div>
               </form>
             )}
+          </div>
+        </div>
+
+        {/* Google Maps Venue Location Panel */}
+        <div className="mt-8 rounded-xl border border-[#E7DFCE] bg-white overflow-hidden">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-6 py-4 border-b border-[#E7DFCE]">
+            <div>
+              <p className="text-xs font-medium text-[#8F6A1E]">Venue Location</p>
+              <h3 className="font-serif text-xl sm:text-2xl font-semibold text-[#1B1814]">
+                {VENUE_CONTACT.brandName} · {VENUE_CONTACT.address}
+              </h3>
+            </div>
+            <a
+              href={VENUE_CONTACT.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-[#1B1814] bg-[#FAF8F4] hover:bg-[#F3EAD3] border border-[#E7DFCE] rounded-md transition-colors duration-200 whitespace-nowrap shrink-0"
+            >
+              <MapPin className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
+              <span>Get Directions</span>
+              <ExternalLink className="w-3.5 h-3.5 text-[#8F6A1E]" aria-hidden="true" />
+            </a>
+          </div>
+          <div className="w-full h-72 sm:h-80 bg-[#FAF8F4]">
+            <iframe
+              title="Parinay Banquet & Garden Google Maps Location"
+              src={VENUE_CONTACT.googleMapsEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full border-0"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>

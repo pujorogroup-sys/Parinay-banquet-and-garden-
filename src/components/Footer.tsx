@@ -1,4 +1,4 @@
-import { MessageCircle, Phone } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle, Phone } from 'lucide-react';
 import { VENUE_CONTACT, VENUE_LOGO_SRC, VENUE_PRICING, buildWhatsAppUrl } from '../data/venueData';
 
 const QUICK_LINKS = [
@@ -33,19 +33,40 @@ export function Footer() {
               {VENUE_CONTACT.address} · 150 Banquet Hall Seating · 600+ Garden Area ·
               800 Total Capacity · 100 Bikes Parking.
             </p>
-            <div className="pt-2 flex items-center gap-3">
+            <div className="pt-2 flex flex-wrap items-center gap-2.5">
+              <a
+                href={VENUE_CONTACT.socials.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Parinay Banquet & Garden on Instagram"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md border border-[#E7DFCE] text-sm font-medium text-[#1B1814] hover:text-[#8F6A1E] hover:border-[#C59B3B] hover:bg-[#FAF8F4] transition-colors duration-200 whitespace-nowrap"
+              >
+                <Instagram className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
+                <span>Instagram</span>
+              </a>
+              <a
+                href={VENUE_CONTACT.socials.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Parinay Banquet & Garden on Facebook"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md border border-[#E7DFCE] text-sm font-medium text-[#1B1814] hover:text-[#8F6A1E] hover:border-[#C59B3B] hover:bg-[#FAF8F4] transition-colors duration-200 whitespace-nowrap"
+              >
+                <Facebook className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
+                <span>Facebook</span>
+              </a>
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#E7DFCE] text-sm font-medium text-[#1B1814] hover:text-[#8F6A1E] hover:border-[#C59B3B] hover:bg-[#FAF8F4] transition-colors duration-200 whitespace-nowrap"
+                aria-label="Chat with Parinay Banquet & Garden on WhatsApp"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md border border-[#E7DFCE] text-sm font-medium text-[#1B1814] hover:text-[#8F6A1E] hover:border-[#C59B3B] hover:bg-[#FAF8F4] transition-colors duration-200 whitespace-nowrap"
               >
                 <MessageCircle className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
                 <span>WhatsApp</span>
               </a>
               <a
                 href={`tel:+${VENUE_CONTACT.whatsappNumber}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-[#E7DFCE] text-sm font-medium text-[#1B1814] hover:text-[#8F6A1E] hover:border-[#C59B3B] hover:bg-[#FAF8F4] transition-colors duration-200 whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-md border border-[#E7DFCE] text-sm font-medium text-[#1B1814] hover:text-[#8F6A1E] hover:border-[#C59B3B] hover:bg-[#FAF8F4] transition-colors duration-200 whitespace-nowrap"
               >
                 <Phone className="w-4 h-4 text-[#8F6A1E]" aria-hidden="true" />
                 <span>Call Now</span>
@@ -78,8 +99,15 @@ export function Footer() {
               Contact
             </h3>
             <address className="not-italic space-y-2.5 text-sm text-[#5C5347]">
-              <p className="text-[#1B1814] font-medium">
-                {VENUE_CONTACT.address}
+              <p>
+                <a
+                  href={VENUE_CONTACT.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1B1814] font-medium hover:text-[#8F6A1E] underline decoration-[#E7DFCE] hover:decoration-[#8F6A1E] underline-offset-4 transition-colors"
+                >
+                  {VENUE_CONTACT.address}
+                </a>
               </p>
               <p className="tabular-nums">
                 <a

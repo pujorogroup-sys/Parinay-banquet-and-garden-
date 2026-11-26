@@ -6,6 +6,7 @@ import {
   VENUE_PRICING,
 } from '../data/venueData';
 import { VenueImage } from './VenueImage';
+import { AuspiciousCountdown } from './AuspiciousCountdown';
 
 export function HeroSection() {
   return (
@@ -86,6 +87,8 @@ export function HeroSection() {
                 </span>
               </div>
             </div>
+
+            <AuspiciousCountdown />
           </div>
         </div>
       </div>

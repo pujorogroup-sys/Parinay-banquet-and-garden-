@@ -6,6 +6,15 @@ export const VENUE_CONTACT = {
   rawPhone: '9068577111',
   displayPhone: '+91 90685 77111',
   address: 'Paschim Puri, Sikandra, Agra',
+  googleMapsUrl:
+    'https://www.google.com/maps/place/parinay+banquet+hall+agra/data=!4m2!3m1!1s0x3974779946801aa7:0xf58b1bd6c31a9d94?sa=X&ved=1t:242&ictx=111&cshid=1795685890775268',
+  googleMapsEmbedUrl:
+    'https://maps.google.com/maps?q=Parinay+Banquet+Hall+Paschim+Puri+Sikandra+Agra&t=&z=15&ie=UTF8&iwloc=&output=embed',
+  socials: {
+    instagram:
+      'https://www.instagram.com/parinaygarden3512?utm_source=ig_web_button_share_sheet&jplx=ZDNlZDc0MzIxNw==',
+    facebook: 'https://www.facebook.com/',
+  },
 };
 
 export const VENUE_PRICING = {
@@ -22,8 +31,8 @@ export const VENUE_PRICING = {
 };
 
 export const HERO_IMAGE = {
-  src: '/src/assets/images/real_parinay_hero_garden_1795610783932.jpg',
-  alt: 'Parinay Banquet & Garden — Paschim Puri, Sikandra, Agra',
+  src: '/assets/aistudio/IMG-20260519-WA0014_e0c70bed.jpg',
+  alt: 'Parinay Banquet & Garden illuminated evening lawn and banquet hall facade in Paschim Puri, Sikandra, Agra',
 };
 
 export interface VenueHighlight {
@@ -73,8 +82,8 @@ export const VENUE_FEATURES: VenueFeature[] = [
     description:
       'Dedicated indoor banquet hall with seating arrangements for 150 guests, suited for family ceremonies, dining, and indoor functions.',
     specs: '150 Guests Seating Capacity',
-    image: '/src/assets/images/real_banquet_hall_150_1795610746496.jpg',
-    imageAlt: 'Parinay Banquet Hall with 150 guest seating',
+    image: '/assets/aistudio/IMG-20260519-WA0011_9808f385.jpg',
+    imageAlt: 'Parinay Banquet Hall interior with chandelier, floral stage, and 150 guest seating',
   },
   {
     number: '02.',
@@ -83,8 +92,8 @@ export const VENUE_FEATURES: VenueFeature[] = [
     description:
       'Spacious open-air garden area accommodating 600+ guests for wedding receptions, stage events, and grand gatherings.',
     specs: '600+ Guests Garden Capacity',
-    image: '/src/assets/images/real_marriage_garden_600_1795610745428.jpg',
-    imageAlt: 'Parinay Garden Area accommodating 600+ guests',
+    image: '/assets/aistudio/IMG-20260519-WA0012_9b8d1c0e.jpg',
+    imageAlt: 'Parinay Banquet & Garden open-air evening lawn accommodating 600+ guests',
   },
   {
     number: '03.',
@@ -120,7 +129,11 @@ export const VENUE_FEATURES: VenueFeature[] = [
   },
 ];
 
-export type GalleryCategory = 'All' | 'Banquet Hall' | 'Garden Area';
+export type GalleryCategory =
+  | 'All'
+  | 'Banquet Hall'
+  | 'Garden Area'
+  | 'Veranda & Entrance';
 
 export interface GalleryItem {
   id: string;
@@ -133,36 +146,116 @@ export interface GalleryItem {
 
 export const GALLERY_ITEMS: GalleryItem[] = [
   {
-    id: 'venue-overview',
-    title: 'Parinay Banquet & Garden',
-    category: 'Garden Area',
-    meta: '800 Total Capacity · Paschim Puri, Sikandra, Agra',
-    src: '/src/assets/images/real_parinay_hero_garden_1795610783932.jpg',
-    alt: 'Parinay Banquet & Garden venue view',
-  },
-  {
-    id: 'banquet-hall',
-    title: 'Banquet Hall',
+    id: 'banquet-hall-seating',
+    title: 'Grand Banquet Hall',
     category: 'Banquet Hall',
-    meta: '150 Guests Seating',
-    src: '/src/assets/images/real_banquet_hall_150_1795610746496.jpg',
-    alt: 'Parinay Banquet Hall 150 guests seating view',
+    meta: '150 Guests Seating · Indoor Hall',
+    src: '/assets/aistudio/IMG-20260519-WA0011_9808f385.jpg',
+    alt: 'Parinay Banquet Hall with grand chandelier, aisle carpet, floral stage, and 150 seating',
   },
   {
-    id: 'garden-area',
-    title: 'Garden Area',
+    id: 'garden-lawn-evening',
+    title: 'Evening Garden Lawn & Walkway',
     category: 'Garden Area',
-    meta: '600+ Guests Space',
-    src: '/src/assets/images/real_marriage_garden_600_1795610745428.jpg',
-    alt: 'Parinay Garden Area 600+ guests view',
+    meta: '600+ Guests Space · Garden Area',
+    src: '/assets/aistudio/IMG-20260519-WA0014_e0c70bed.jpg',
+    alt: 'Parinay Banquet & Garden evening lawn with stone pathway and illuminated veranda',
   },
   {
-    id: 'mandap-setup',
-    title: 'Garden Celebration Setup',
+    id: 'front-elevation',
+    title: 'Parinay Main Front Elevation',
+    category: 'Veranda & Entrance',
+    meta: 'Paschim Puri, Sikandra, Agra',
+    src: '/assets/aistudio/IMG-20260519-WA0022_0dc51e43.jpg',
+    alt: 'Parinay Banquet & Garden illuminated night facade and main arched entrance',
+  },
+  {
+    id: 'floral-stage',
+    title: 'Floral Reception Stage',
+    category: 'Banquet Hall',
+    meta: 'Smooth Decoration · Indoor Stage',
+    src: '/assets/aistudio/IMG-20260519-WA0016_27ec0f34.jpg',
+    alt: 'Indoor banquet hall reception stage with floral arches and royal sofa',
+  },
+  {
+    id: 'garden-area-wide',
+    title: 'Open-Air Garden Area',
     category: 'Garden Area',
-    meta: 'Open-Air Garden Area',
-    src: '/src/assets/images/real_mandap_decor_white_gold_1795610755595.jpg',
-    alt: 'Parinay Garden Area event setup',
+    meta: '600+ Guests · Wide Lawn View',
+    src: '/assets/aistudio/IMG-20260519-WA0012_9b8d1c0e.jpg',
+    alt: 'Wide evening view of Parinay Garden Area and banquet hall exterior',
+  },
+  {
+    id: 'botanical-veranda',
+    title: 'Glass-Roof Botanical Veranda',
+    category: 'Veranda & Entrance',
+    meta: 'Covered Seating & Dining Gallery',
+    src: '/assets/aistudio/IMG-20260519-WA0019_385f2268.jpg',
+    alt: 'Covered veranda corridor with floral glass ceiling and round dining tables',
+  },
+  {
+    id: 'garden-serving-counter',
+    title: 'Garden Buffet & Serving Counter',
+    category: 'Garden Area',
+    meta: 'Garden Area · Decorative Counter',
+    src: '/assets/aistudio/IMG-20260519-WA0013_e0634978.jpg',
+    alt: 'Decorative garden serving counter set on green lawn at Parinay Banquet & Garden',
+  },
+  {
+    id: 'chandelier-hallway',
+    title: 'Chandelier Entry Corridor',
+    category: 'Banquet Hall',
+    meta: 'Grand Entrance · Marble Flooring',
+    src: '/assets/aistudio/IMG-20260519-WA0009_047dc091.jpg',
+    alt: 'Checkered marble entry hallway with twin crystal chandeliers at Parinay Banquet',
+  },
+  {
+    id: 'floral-garden-entry',
+    title: 'Floral Banquet & Lawn Entrance',
+    category: 'Garden Area',
+    meta: 'Garden & Hall Connecting Arch',
+    src: '/assets/aistudio/IMG-20260519-WA0017_eab9fd3b.jpg',
+    alt: 'Floral arch framing the white French doors opening onto the green garden lawn',
+  },
+  {
+    id: 'veranda-round-tables',
+    title: 'Veranda Round-Table Dining',
+    category: 'Veranda & Entrance',
+    meta: 'Covered Veranda · Clean Environment',
+    src: '/assets/aistudio/IMG-20260519-WA0023_1aaa0918.jpg',
+    alt: 'Round yellow-gold draped dining tables along the arched French doors veranda',
+  },
+  {
+    id: 'illuminated-signboard',
+    title: 'Parinay Banquet & Garden Signboard',
+    category: 'Veranda & Entrance',
+    meta: 'Main Gate · Paschim Puri, Sikandra',
+    src: '/assets/aistudio/IMG-20260519-WA0021_1bc123bd.jpg',
+    alt: 'Illuminated Parinay Banquet & Garden signboard and architectural uplighting at night',
+  },
+  {
+    id: 'lawn-floral-arch',
+    title: 'Illuminated Lawn & Golden Urns',
+    category: 'Garden Area',
+    meta: 'Smooth Decoration · Garden View',
+    src: '/assets/aistudio/IMG-20260519-WA0010_0cd07b17.jpg',
+    alt: 'Evening lawn edge with golden decorative urns, floral entrance arch, and French doors',
+  },
+  {
+    id: 'vaulted-glass-corridor',
+    title: 'Vaulted Floral Ceiling Gallery',
+    category: 'Veranda & Entrance',
+    meta: 'Clean Environment · Indoor Corridor',
+    src: '/assets/aistudio/IMG-20260519-WA0020_6f22083a.jpg',
+    alt: 'Full view of the vaulted floral glass ceiling veranda and marble floor',
+  },
+  {
+    id: 'daylight-veranda',
+    title: 'French-Door Veranda Facade',
+    category: 'Veranda & Entrance',
+    meta: 'Exterior Veranda · Striped Awnings',
+    src: '/assets/aistudio/IMG-20260519-WA0018_b066fa67.jpg',
+    alt: 'Clean evening exterior of Parinay veranda with striped awnings, wall lanterns, and white French doors',
   },
 ];
 
@@ -224,6 +317,52 @@ export const FAQ_ITEMS: FaqItem[] = [
     question: 'How far in advance should we book Parinay Banquet & Garden?',
     answer:
       'Wedding season and auspicious dates fill up quickly in Agra, so we recommend checking availability as soon as your celebration date is decided. Advance confirmation terms and visit appointments are shared directly via WhatsApp or in person at Paschim Puri, Sikandra, Agra.',
+  },
+];
+
+export interface AuspiciousDate {
+  id: string;
+  label: string;
+  isoDate: string;
+  occasion: string;
+}
+
+export const UPCOMING_WEDDING_DATES: AuspiciousDate[] = [
+  {
+    id: '2026-12-04',
+    label: '4 December 2026',
+    isoDate: '2026-12-04T19:00:00+05:30',
+    occasion: 'Vivah Muhurat',
+  },
+  {
+    id: '2026-12-11',
+    label: '11 December 2026',
+    isoDate: '2026-12-11T19:00:00+05:30',
+    occasion: 'Vivah Muhurat',
+  },
+  {
+    id: '2027-01-22',
+    label: '22 January 2027',
+    isoDate: '2027-01-22T19:00:00+05:30',
+    occasion: 'Vivah Muhurat',
+  },
+  {
+    id: '2027-02-14',
+    label: '14 February 2027',
+    isoDate: '2027-02-14T19:00:00+05:30',
+    occasion: 'Vivah Muhurat',
+  },
+  {
+    id: '2027-04-19',
+    label: '19 April 2027',
+    isoDate: '2027-04-19T19:00:00+05:30',
+    occasion: 'Vivah Muhurat',
+  },
+  {
+    id: '2027-05-06',
+    label: '6 May 2027',
+    isoDate: '2027-05-06T19:00:00+05:30',
+    occasion: 'Vivah Muhurat',
   },
 ];
 
